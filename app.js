@@ -5,6 +5,7 @@ const mustache = require('mustache-express');
 //Config Arquivos para execução no app
 const router = require('./routes/index');
 const helpers = require('./helpers');
+const errorHandler = require('./handlers/errorHandlers');
 
 // Middleware
 
@@ -20,10 +21,14 @@ app.use((req, res, next) => {
 }); 
 
 //Config Json for Project
-app.use(express.json()); 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true })); 
 
 //Sempre executar de ultimo
 app.use('/', router); 
+
+//Executar caso não encontrar uma página
+app.use(errorHandler.notFound);
 
 
 //Config MST View for Engine
