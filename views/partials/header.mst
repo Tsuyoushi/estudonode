@@ -19,4 +19,18 @@
         </ul>
         <hr/>
 
+        {{#flashes}}
+            {{#success}}
+                <div>{{.}}</div>
+            {{/success}}
+
+            {{#error}}
+                <div>{{.}}</div>
+            {{/error}}
+
+            {{#info}}
+                <div>{{.}}</div>
+            {{/info}}
+        {{/flashes}}
+
     

@@ -1,3 +1,5 @@
+const mongoose = require('mongoose');
+const Post = mongoose.model('Post');
 //Parecido como chamada de função a uma variavel
 exports.userMiddleware = (req, res, next) => {
     
@@ -11,11 +13,14 @@ exports.userMiddleware = (req, res, next) => {
     next();
 };
 
-exports.index = (req, res) => {
+exports.index = async (req, res) => {
     let oDados = {
         pageTitle: "Adriano",
         userInfo: req.userInfo
     };
+
+    const posts = await Post.find();
+    oDados.posts = posts;
 
     //Renderizar a VIEW MST
     res.render('home', oDados);
