@@ -1,0 +1,14 @@
+{{>header }}
+<h1> {{post.title}} </h1>
+<article>{{post.body}}</article>
+<hr/>
+    <label> 
+        Tags: 
+        <ul>
+            {{#post.tags}}
+                <li>{{.}}</li>
+            {{/post.tags}}
+        </ul>
+    </label>
+    <br/>
+    

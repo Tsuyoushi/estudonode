@@ -2,7 +2,6 @@
 
 <h1> Pagina Home </h1>
 
-<p> USUARIO LOGADO: {{userInfo.name}}
 
 {{#posts}}
     <h3><a href="./post/{{slug}}">{{title}}</a></h3>

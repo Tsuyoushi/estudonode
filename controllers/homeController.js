@@ -14,10 +14,7 @@ exports.userMiddleware = (req, res, next) => {
 };
 
 exports.index = async (req, res) => {
-    let oDados = {
-        pageTitle: "Adriano",
-        userInfo: req.userInfo
-    };
+    let oDados = {    };
 
     const posts = await Post.find();
     oDados.posts = posts;
