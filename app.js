@@ -22,6 +22,9 @@ const app = express(); // Construct Express
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); 
 
+app.use(express.static(__dirname + '/public'));
+
+
 //Habilitação Cookie
 app.use(cookieParser(process.env.SECRET));
 //Habilitação Session

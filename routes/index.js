@@ -23,4 +23,5 @@ router.post('/post/:slug/edit', postController.editAction);
 
 router.get('/post/:slug', postController.view);
 
+
 module.exports = router;
